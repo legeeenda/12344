@@ -1,0 +1,26 @@
+задача1
+def replace_first_last_char(s):
+    if len(s) <= 1:
+        return "!"  # Если строка из одного символа, заменяем его на "!"
+    return "!" + s[1:-1] + "!"
+задача2
+def word_info(word):
+    return len(word), word[0], word[-1] if word else (0, None, None)
+задача3
+def extra_chars(k, s):
+    if len(s) > k:
+        return s[-(len(s) - k):]  # Выводим избыточные символы
+    return ""
+задача4 
+def second_word(s):
+    words = s.split()
+    return words[1] if len(words) > 1 else None
+задача5
+def longest_word(s):
+    words = s.split()
+    return max(words, key=len) if words else None
+задача6
+def count_case_letters(s):
+    lower_count = sum(1 for char in s if char.islower())
+    upper_count = sum(1 for char in s if char.isupper())
+    return lower_count, upper_count

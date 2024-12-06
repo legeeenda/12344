@@ -1,0 +1,82 @@
+# Задача 1: Найти сумму чисел от 1 до 100
+n = 1
+total_sum = 0
+while n <= 100:
+    total_sum += n
+    n += 1
+print("Сумма чисел от 1 до 100:", total_sum)
+# Задача 2: Вычислить факториал числа
+a = int(input("Введите число для вычисления факториала: "))
+factorial = 1
+counter = 1
+while counter <= a:
+    factorial *= counter
+    counter += 1
+print(f"Факториал числа {a} равен {factorial}")
+# Задача 3: Вывести N чисел ряда Фибоначчи
+n = int(input("Введите количество чисел ряда Фибоначчи: "))
+a, b = 1, 2
+counter = 0
+while counter < n:
+    print(a, end=" ")
+    a, b = b, a + b
+    counter += 1
+print()  # Перенос строки после вывода ряда
+# Задача 4: Игра "Угадай число"
+import random
+
+hidden_number = random.randint(1, 100)
+print("Я загадал число от 1 до 100. Попробуй угадать. Напиши 'exit', чтобы выйти.")
+
+while True:
+    guess = input("Введите число: ")
+    if guess.lower() == "exit":
+        print("Игра окончена. До встречи!")
+        break
+    elif not guess.isdigit():
+        print("Пожалуйста, введите корректное число.")
+        continue
+    
+    guess = int(guess)
+    if guess < hidden_number:
+        print("Загаданное число больше.")
+    elif guess > hidden_number:
+        print("Загаданное число меньше.")
+    else:
+        print("Поздравляю! Вы угадали.")
+        break
+# Задача 5: Найти НОД двух чисел
+x = int(input("Введите первое число: "))
+y = int(input("Введите второе число: "))
+
+while y != 0:
+    x, y = y, x % y
+
+print("Наибольший общий делитель:", x)
+# Задача 6: Угадать число за 10 попыток
+import random
+
+hidden_number = random.randint(0, 100)
+attempts = 0
+max_attempts = 10
+
+print("Я загадал число от 0 до 100. У вас есть 10 попыток, чтобы угадать.")
+
+while attempts < max_attempts:
+    guess = input(f"Попытка {attempts + 1}: Введите число: ")
+    if not guess.isdigit():
+        print("Введите корректное число.")
+        continue
+    
+    guess = int(guess)
+    attempts += 1
+
+    if guess < hidden_number:
+        print("Загаданное число больше.")
+    elif guess > hidden_number:
+        print("Загаданное число меньше.")
+    else:
+        print("Поздравляю! Вы угадали.")
+        break
+else:
+    print(f"Вы исчерпали попытки. Загаданное число было: {hidden_number}")

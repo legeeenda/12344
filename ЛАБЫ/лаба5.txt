@@ -1,0 +1,39 @@
+# Решение задач
+
+# Задача 1: Работа со списком
+example_list = [10, 20, 30, 40, 50]
+
+# Операции с элементами
+access_element = example_list[2]  # Обращение к элементу по индексу (3-й элемент)
+example_list[1] = 25  # Замена элемента (второй элемент заменяем на 25)
+example_list.append(60)  # Добавление элемента (добавляем 60)
+removed_element = example_list.pop(0)  # Удаление элемента (удаляем первый элемент)
+duplicated_list = example_list * 2  # Дублирование списка
+
+# Задача 2: Поиск минимального элемента и его индекса
+list_2 = [45, 23, 12, 56, 8, 34, 78]
+min_element = min(list_2)
+min_index = list_2.index(min_element)
+
+# Задача 3: Разделение списка на положительные и остальные
+list_3 = [-5, 0, 3, 7, -2, 8, -10]
+positive_elements = [x for x in list_3 if x > 0]
+non_positive_elements = [x for x in list_3 if x <= 0]
+
+# Задача 4: Сумма элементов с нечетными индексами
+list_4 = [10, 20, 30, 40, 50, 60, 70]
+sum_odd_indices = sum(list_4[i] for i in range(1, len(list_4), 2))
+
+# Задача 5: Замена элементов меньше 15 на удвоенные значения
+list_5 = [12, 18, 7, 22, 15, 9, 31, 5]
+transformed_list_5 = [x * 2 if x < 15 else x for x in list_5]
+
+# Задача 6: Пересечение двух списков с сортировкой
+list_6_1 = [3, 8, 6, 20, 15, 10]
+list_6_2 = [10, 15, 8, 25, 30]
+intersection_sorted = sorted(set(list_6_1).intersection(list_6_2))
+
+# Вывод результатов
+example_list, access_element, removed_element, duplicated_list, \
+min_element, min_index, positive_elements, non_positive_elements, \
+list_4, sum_odd_indices, transformed_list_5, intersection_sorted
